@@ -4,6 +4,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from dotenv import load_dotenv
 import asyncio
+from difflib import SequenceMatcher
 
 # Загружаем базу знаний
 try:
@@ -17,6 +18,10 @@ except Exception as e:
 load_dotenv()
 bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher()
+
+def calculate_similarity(a, b):
+    """Вычисляет степень схожести двух строк"""
+    return SequenceMatcher(None, a, b).ratio()
 
 @dp.message(Command("start"))
 async def start(message: types.Message):
@@ -58,27 +63,37 @@ async def handle_question(message: types.Message):
     # Предобработка текста
     user_question = message.text.lower().strip().replace("?", "").replace(".", "").replace("!", "")
     
-    # Поиск по частичному совпадению
+    # Поиск наиболее похожего вопроса
+    best_match = None
+    best_ratio = 0.6  # минимальный порог схожести
+    
     for item in qa_base:
-        # Убираем знаки препинания из вопроса из базы
         base_question = item["question"].lower().replace("?", "").replace(".", "").replace("!", "")
         
-        # Проверяем, содержится ли текст пользователя в вопросе из базы
-        if user_question in base_question or base_question in user_question:
-            # Формируем ответ
-            response = f"⚖️ {item['answer']}\n\n"
+        # Проверяем степень схожести
+        ratio = calculate_similarity(user_question, base_question)
+        
+        # Если нашли более подходящий вопрос
+        if ratio > best_ratio:
+            best_ratio = ratio
+            best_match = item
+    
+    # Если нашли подходящий вопрос
+    if best_match:
+        # Формируем ответ
+        response = f"⚖️ {best_match['answer']}\n\n"
             
-            # Добавляем ссылки на законы, если они есть
-            if item["law_links"] and len(item["law_links"]) > 0:
-                response += "🔗 Источник: "
-                for i, link in enumerate(item["law_links"], 1):
-                    response += f"\n{i}. {link}"
-            
-            await message.answer(
-                response,
-                reply_markup=types.ReplyKeyboardRemove()
-            )
-            return
+        # Добавляем ссылки на законы, если они есть
+        if best_match["law_links"] and len(best_match["law_links"]) > 0:
+            response += "🔗 Источник: "
+            for i, link in enumerate(best_match["law_links"], 1):
+                response += f"\n{i}. {link}"
+        
+        await message.answer(
+            response,
+            reply_markup=types.ReplyKeyboardRemove()
+        )
+        return
     
     # Если вопрос не найден
     await message.answer(
