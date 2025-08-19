@@ -5,7 +5,7 @@
     "category": "Трудовое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 81 ТК РФ, увольнение без причины незаконно. Вы можете обратиться в трудовую инспекцию или суд для восстановления на работе и получения компенсации за вынужденный прогул.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34683/6a7ba42d8fda3a1ba186a9eb5c806921998ae7d1/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34683/6a7ba42d8fda3a1ba186a9eb5c806921998ae7d1/"]
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "category": "Трудовое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 256 ТК РФ, отпуск по уходу за ребенком до 3 лет предоставляется одному из родителей. Для оформления необходимо написать заявление и предоставить свидетельство о рождении ребенка.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34683/7f9229768de994c7e169c7fba268283a6b08e71d/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34683/7f9229768de994c7e169c7fba268283a6b08e71d/"]
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "category": "Трудовое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 136 ТК РФ, зарплата должна выплачиваться не реже двух раз в месяц. При задержке более 15 дней вы можете приостановить работу (ст. 142 ТК РФ) и потребовать компенсацию в размере 1/150 ключевой ставки ЦБ за каждый день задержки (ст. 236 ТК РФ).",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34683/a0a891ee650687026ef53d5d1194983419be6793/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34683/a0a891ee650687026ef53d5d1194983419be6793/"]
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "category": "Трудовое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 81 ТК РФ, увольнение во время больничного допускается только в случае ликвидации компании. Во всех остальных случаях это незаконно, и вы можете потребовать восстановления на работе.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34683/6a7ba42d8fda3a1ba186a9eb5c806921998ae7d1/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34683/6a7ba42d8fda3a1ba186a9eb5c806921998ae7d1/"]
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "category": "Трудовое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 113 ТК РФ, работа в выходные и нерабочие праздничные дни запрещается, за исключением случаев, предусмотренных законом. За такую работу должна быть предоставлена дополнительная оплата в двойном размере (ст. 153 ТК РФ) или дополнительный день отдыха.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34683/7d22494d1486cfffbc4efaf51dc2e5af86ffb8f9/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34683/7d22494d1486cfffbc4efaf51dc2e5af86ffb8f9/"]
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "category": "Защита прав потребителей",
     "country": ["Россия"],
     "answer": "Согласно ст. 18 ЗоЗПП РФ, если товар сломался в течение 15 дней с момента покупки, вы вправе требовать возврата денег или замены товара. Для этого необходимо написать претензию продавцу с приложением чека.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_305/76ae101b731ecc22467fd9f1f14cb9e2b8799026/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_305/76ae101b731ecc22467fd9f1f14cb9e2b8799026/"]
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "category": "Защита прав потребителей",
     "country": ["Россия"],
     "answer": "Согласно ст. 25 ЗоЗПП РФ, на возврат товара надлежащего качества дается 14 дней, не считая дня покупки. Товар должен сохранять товарный вид, упаковку и чек.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_305/07e266c138f7d30d498ff235626083e75b770ff3/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_305/07e266c138f7d30d498ff235626083e75b770ff3/"]
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "category": "Защита прав потребителей",
     "country": ["Россия"],
     "answer": "Согласно ст. 18 ЗоЗПП РФ, при обнаружении недостатков в технически сложном товаре в течение 15 дней вы можете потребовать возврата денег или замены. Для этого необходимо написать претензию с приложением гарантийного талона и чека.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_305/76ae101b731ecc22467fd9f1f14cb9e2b8799026/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_305/76ae101b731ecc22467fd9f1f14cb9e2b8799026/"]
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "category": "Защита прав потребителей",
     "country": ["Россия"],
     "answer": "Согласно ст. 12 ЗоЗПП РФ, за обман при продаже предусмотрена ответственность в виде штрафа в двойном размере от стоимости товара. Вы можете подать претензию продавцу или обратиться в Роспотребнадзор.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_305/b9c49e21678597215e7d4570e60e3b72d6ca7312/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_305/b9c49e21678597215e7d4570e60e3b72d6ca7312/"]
   },
   {
     "id": 10,
@@ -77,7 +77,7 @@
     "category": "Защита прав потребителей",
     "country": ["Россия"],
     "answer": "Согласно ст. 26.1 ЗоЗПП РФ, вы можете вернуть товар, купленный через интернет, в течение 7 дней без объяснения причин. Если информация о возврате не была предоставлена продавцом, срок увеличивается до 3 месяцев.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_305/1525b1a2f037db240c8e6a749619f86e53857f13/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_305/1525b1a2f037db240c8e6a749619f86e53857f13/"]
   },
   {
     "id": 11,
@@ -85,7 +85,7 @@
     "category": "Жилищное право",
     "country": ["Россия"],
     "answer": "Согласно Федеральному закону №1541-1 'О приватизации жилищного фонда в РФ', для приватизации необходимо собрать пакет документов (паспорта, технический паспорт, выписка из домовой книги) и подать заявление в орган местного самоуправления.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_100/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_100/"]
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "category": "Жилищное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 31 ЖК РФ, выселение без суда возможно только в случае добровольного отказа от жилья. Во всех остальных случаях требуется судебное решение.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_51057/7b18082b2397114d3abca2fd14d7f22230aece1e/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_51057/7b18082b2397114d3abca2fd14d7f22230aece1e/"]
   },
   {
     "id": 13,
@@ -101,7 +101,7 @@
     "category": "Жилищное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 25-26 ЖК РФ, для перепланировки необходимо получить разрешение в местной администрации, предоставив проект перепланировки и техническое заключение.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_51057/b335a274704bd93de49fb304d67ee8311d2c6860/, https://www.consultant.ru/document/cons_doc_LAW_51057/7e4a9388b3a2611890a95ada5f607b38ad46d0fd/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_51057/b335a274704bd93de49fb304d67ee8311d2c6860/", "https://www.consultant.ru/document/cons_doc_LAW_51057/7e4a9388b3a2611890a95ada5f607b38ad46d0fd/"]
   },
   {
     "id": 14,
@@ -109,7 +109,7 @@
     "category": "Жилищное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 1064 ГК РФ, вы имеете право требовать возмещения ущерба от виновника. Необходимо составить акт затопления с участием управляющей компании и оценить ущерб.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_9027/c511835e25e63740cf185038b1ad056526f814e9/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_9027/c511835e25e63740cf185038b1ad056526f814e9/"]
   },
   {
     "id": 15,
@@ -117,7 +117,7 @@
     "category": "Жилищное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 687 ГК РФ, договор аренды можно расторгнуть по соглашению сторон или через суд при нарушении условий договора одной из сторон.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_9027/d4304eec31c7e1323ffb419ed41883da482d9488/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_9027/d4304eec31c7e1323ffb419ed41883da482d9488/"]
   },
   {
     "id": 16,
@@ -125,7 +125,7 @@
     "category": "ДТП и дорожные правонарушения",
     "country": ["Россия"],
     "answer": "Согласно п. 2.5.1 ПДД РФ и ст. 1.1 ФЗ 'О безопасности дорожного движения', при ДТП без пострадавших можно оформить европротокол через приложение 'Помощник ОСАГО'.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_2709/a4b879c29ebc2ff9a56a0595499b6eb2dce7980e/, https://www.consultant.ru/document/cons_doc_LAW_8585/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_2709/a4b879c29ebc2ff9a56a0595499b6eb2dce7980e/", "https://www.consultant.ru/document/cons_doc_LAW_8585/"]
   },
   {
     "id": 17,
@@ -133,7 +133,7 @@
     "category": "ДТП и дорожные правонарушения",
     "country": ["Россия"],
     "answer": "Согласно ст. 32.6 КоАП РФ, после окончания срока лишения необходимо сдать теоретический экзамен в ГИБДД и оплатить все штрафы.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/03488ac9c15ad26de95ef329028f77e4d7dc03bb/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/03488ac9c15ad26de95ef329028f77e4d7dc03bb/"]
   },
   {
     "id": 18,
@@ -141,7 +141,7 @@
     "category": "ДТП и дорожные правонарушения",
     "country": ["Россия"],
     "answer": "Согласно ст. 30.1 КоАП РФ, штраф можно оспорить в течение 10 дней с момента получения постановления, подав жалобу в вышестоящий орган или суд.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/42b53d65ef7bdf518041f97994f487e088e8e931/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/42b53d65ef7bdf518041f97994f487e088e8e931/"]
   },
   {
     "id": 19,
@@ -149,7 +149,7 @@
     "category": "ДТП и дорожные правонарушения",
     "country": ["Россия"],
     "answer": "Согласно п. 2.5 ПДД РФ, необходимо оказать первую помощь, вызвать скорую и ГИБДД, не перемещать транспортные средства до прибытия сотрудников.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_2709/a4b879c29ebc2ff9a56a0595499b6eb2dce7980e/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_2709/a4b879c29ebc2ff9a56a0595499b6eb2dce7980e/"]
   },
   {
     "id": 20,
@@ -157,7 +157,7 @@
     "category": "ДТП и дорожные правонарушения",
     "country": ["Россия"],
     "answer": "Согласно ст. 12.8 КоАП РФ, за управление ТС в состоянии алкогольного опьянения лишают прав на срок от 1,5 до 2 лет и штраф 30 тыс. руб.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/aa69183ecd988ed365aa7b0e5fffb687dc479b71/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/aa69183ecd988ed365aa7b0e5fffb687dc479b71/"]
   },
   {
     "id": 21,
@@ -165,7 +165,7 @@
     "category": "Семейное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 19 СК РФ, развод через ЗАГС возможен при отсутствии общих детей и взаимном согласии супругов. Необходимо подать совместное заявление и оплатить госпошлину.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_8982/9e43cedf0f660aa107b296ec91b196dbe5836c68/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_8982/9e43cedf0f660aa107b296ec91b196dbe5836c68/"]
   },
   {
     "id": 22,
@@ -173,7 +173,7 @@
     "category": "Семейное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 80 СК РФ, алименты взыскиваются через суд. Размер составляет 25% от дохода на одного ребенка. Необходимо подать исковое заявление с копией свидетельства о рождении.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_8982/939297ca809b2aa9866a81dbe3759fe66c596075/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_8982/939297ca809b2aa9866a81dbe3759fe66c596075/"]
   },
   {
     "id": 23,
@@ -181,7 +181,7 @@
     "category": "Семейное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 48 СК РФ, установление отцовства возможно через суд при наличии доказательств (например, ДНК-теста). Иск подается по месту жительства ответчика.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_8982/f64d6b175638c70eb99ef021764166984044fa23/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_8982/f64d6b175638c70eb99ef021764166984044fa23/"]
   },
   {
     "id": 24,
@@ -189,7 +189,7 @@
     "category": "Семейное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 38 СК РФ, имущество, нажитое в браке, делится поровну. Исключение составляют личное имущество и имущество, приобретенное до брака.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_8982/ff4380f81fa499927e7dc1d442880aa81e558b05/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_8982/ff4380f81fa499927e7dc1d442880aa81e558b05/"]
   },
   {
     "id": 25,
@@ -197,7 +197,7 @@
     "category": "Семейное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 146 СК РФ, для оформления опеки необходимо обратиться в орган опеки с заявлением и пакетом документов (справки о доходах, жилье, судимостях).",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_8982/5fe429f995581bcd1a1216901f2b84eba415ce6b/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_8982/5fe429f995581bcd1a1216901f2b84eba415ce6b/"]
   },
   {
     "id": 26,
@@ -205,7 +205,7 @@
     "category": "Налоговое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 220 НК РФ, вы можете вернуть 13% от стоимости жилья (макс. 260 тыс. руб.) через налоговую инспекцию, предоставив декларацию 3-НДФЛ и подтверждающие документы.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_28165/62f621e5835790398a88f80270fe2cf0b3710b3c/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_28165/62f621e5835790398a88f80270fe2cf0b3710b3c/"]
   },
   {
     "id": 27,
@@ -213,7 +213,7 @@
     "category": "Налоговое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 223 НК РФ, НДФЛ удерживается работодателем ежемесячно из зарплаты работника по ставке 13% и перечисляется в бюджет не позднее дня, следующего за днем выплаты зарплаты.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_28165/7343a74dd3a6181387030c0bfcf71007254b4f5c/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_28165/7343a74dd3a6181387030c0bfcf71007254b4f5c/"]
   },
   {
     "id": 28,
@@ -221,7 +221,7 @@
     "category": "Налоговое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 229 НК РФ, декларацию 3-НДФЛ можно заполнить через личный кабинет налогоплательщика или программу 'Декларация'. Необходимо указать доходы за год и приложить подтверждающие документы.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_28165/36b2179632378c984cf6fbf0ea28e731baa919eb/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_28165/36b2179632378c984cf6fbf0ea28e731baa919eb/"]
   },
   {
     "id": 29,
@@ -229,7 +229,7 @@
     "category": "Налоговое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 407 НК РФ, пенсионеры освобождаются от уплаты налога на имущество физических лиц в отношении одного объекта каждого вида (квартира, дом, гараж).",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_28165/2573b723f294419039974f75da8e928dfbe027c6/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_28165/2573b723f294419039974f75da8e928dfbe027c6/"]
   },
   {
     "id": 30,
@@ -237,7 +237,7 @@
     "category": "Налоговое право",
     "country": ["Россия"],
     "answer": "Согласно ст. 89 НК РФ, при проведении выездной проверки налоговая инспекция должна уведомить вас за 10 дней. Вы имеете право присутствовать при проверке и знакомиться с материалами проверки.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_19671/575046595bc7e01efd9a0a0d2f6c0ffb64442868/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_19671/575046595bc7e01efd9a0a0d2f6c0ffb64442868/"]
   },
   {
     "id": 31,
@@ -245,7 +245,7 @@
     "category": "Уголовное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 158 УК РФ, кража наказывается штрафом до 1000 МРОТ, обязательными работами до 360 часов или лишением свободы до 2 лет в зависимости от суммы ущерба.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_10699/57b5c7b83fcd2cf40cabe2042f2d8f04ed6875ad/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_10699/57b5c7b83fcd2cf40cabe2042f2d8f04ed6875ad/"]
   },
   {
     "id": 32,
@@ -253,7 +253,7 @@
     "category": "Уголовное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 159 УК РФ, мошенничество наказывается штрафом до 120 тыс. руб., обязательными работами до 480 часов или лишением свободы до 10 лет в зависимости от обстоятельств.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_10699/8012ecdf64b7c9cfd62e90d7f55f9b5b7b72b755/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_10699/8012ecdf64b7c9cfd62e90d7f55f9b5b7b72b755/"]
   },
   {
     "id": 33,
@@ -261,7 +261,7 @@
     "category": "Уголовное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 115 УК РФ, умышленное причинение легкого вреда здоровью наказывается штрафом до 40 тыс. руб. или обязательными работами до 480 часов.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_10699/160da87db0e45c893db6d5ca2729ea637bb32001/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_10699/160da87db0e45c893db6d5ca2729ea637bb32001/"]
   },
   {
     "id": 34,
@@ -269,7 +269,7 @@
     "category": "Уголовное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 163 УК РФ, вымогательство наказывается штрафом до 1 млн руб., обязательными работами до 480 часов или лишением свободы до 7 лет.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_10699/3cf93ca64f2a009e75430fc6394b66a3642ba176/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_10699/3cf93ca64f2a009e75430fc6394b66a3642ba176/"]
   },
   {
     "id": 35,
@@ -277,7 +277,7 @@
     "category": "Уголовное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 157 УК РФ, злостное уклонение от уплаты алиментов наказывается исправительными работами до 1 года или лишением свободы до 1 года.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_10699/1ff58aab7f0012bee8ea288dafc9f2ab0ad4a4ec/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_10699/1ff58aab7f0012bee8ea288dafc9f2ab0ad4a4ec/"]
   },
   {
     "id": 36,
@@ -285,7 +285,7 @@
     "category": "Земельное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 39.15 ЗК РФ, для оформления земли в собственность необходимо подать заявление в Росреестр с кадастровым паспортом и документами, подтверждающими право на землю.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_33773/a3ce4fe2b7f2b04c5bfb5f1ec582cdde1e5db15e/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_33773/a3ce4fe2b7f2b04c5bfb5f1ec582cdde1e5db15e/"]
   },
   {
     "id": 37,
@@ -293,7 +293,7 @@
     "category": "Земельное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 64 ЗК РФ, споры о границах земельных участков разрешаются в судебном порядке с привлечением кадастрового инженера для уточнения границ.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_33773/9e0f0a1ef03020bfa9a10e1e4e0bb97931957e77/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_33773/9e0f0a1ef03020bfa9a10e1e4e0bb97931957e77/"]
   },
   {
     "id": 38,
@@ -301,7 +301,7 @@
     "category": "Земельное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 8.8 КоАП РФ, использование земли не по целевому назначению влечет штраф от 1% до 1.5% кадастровой стоимости земли для юридических лиц.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/54179b602a94ee33b01318897e0f050dc25d73cf/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/54179b602a94ee33b01318897e0f050dc25d73cf/"]
   },
   {
     "id": 39,
@@ -309,7 +309,7 @@
     "category": "Земельное право",
     "country": ["Россия"],
     "answer": "Согласно Федеральному закону №137-ФЗ, земельный участок под ИЖС можно приватизировать бесплатно, если он находится в бессрочном пользовании или пожизненном наследуемом владении.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_33764/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_33764/"]
   },
   {
     "id": 40,
@@ -317,7 +317,7 @@
     "category": "Земельное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 39.6 ЗК РФ, аренду земельного участка можно оформить через торги или в упрощенном порядке при наличии разрешенного вида использования.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_33773/79da6e3bbbc8eb967db0714e8378269bfea9f83c/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_33773/79da6e3bbbc8eb967db0714e8378269bfea9f83c/"]
   },
   {
     "id": 41,
@@ -325,7 +325,7 @@
     "category": "Административное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 30.1 КоАП РФ, штраф можно оспорить в течение 10 дней с момента получения постановления, подав жалобу в вышестоящий орган или суд.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/42b53d65ef7bdf518041f97994f487e088e8e931/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/42b53d65ef7bdf518041f97994f487e088e8e931/"]
   },
   {
     "id": 42,
@@ -333,7 +333,7 @@
     "category": "Административное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 18.8 КоАП РФ, нарушение правил миграционного учета влечет штраф от 2 тыс. до 5 тыс. руб. для граждан и от 400 тыс. до 1 млн руб. для юридических лиц.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/535af3a253c472402638b7696485e896a7866e5a/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/535af3a253c472402638b7696485e896a7866e5a/"]
   },
   {
     "id": 43,
@@ -341,7 +341,7 @@
     "category": "Административное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 20.1 КоАП РФ, мелкое хулиганство наказывается штрафом до 1 тыс. руб. или арестом на срок до 15 суток.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/74754240d170cc049cd7b313852fd5985eb0aafc/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/74754240d170cc049cd7b313852fd5985eb0aafc/"]
   },
   {
     "id": 44,
@@ -349,7 +349,7 @@
     "category": "Административное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 30.3 КоАП РФ, постановление можно обжаловать в течение 10 дней в вышестоящий орган или районный суд по месту вынесения постановления.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/9ae21ddd95d2541114102cce9c92efe6fc637266/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/9ae21ddd95d2541114102cce9c92efe6fc637266/"]
   },
   {
     "id": 45,
@@ -357,7 +357,7 @@
     "category": "Административное право",
     "country": ["Россия"],
     "answer": "Согласно ст. 14.4 КоАП РФ, нарушение правил торговли влечет штраф от 3 тыс. до 5 тыс. руб. для граждан и от 30 тыс. до 50 тыс. руб. для юридических лиц.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_34661/49b4f4dfae57b211d45f702df18cb4e4c2bf1ce3/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_34661/49b4f4dfae57b211d45f702df18cb4e4c2bf1ce3/"]
   },
   {
     "id": 46,
@@ -365,7 +365,7 @@
     "category": "Право в сфере ЖКХ",
     "country": ["Россия"],
     "answer": "Согласно п. 31(1) ПП РФ №354, перерасчет за коммунальные услуги можно получить при отсутствии временной регистрации или при отсутствии жильцов более 5 дней.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_114247/fe4565bc56b765620bfaaf0155a4f389e6d47371/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_114247/fe4565bc56b765620bfaaf0155a4f389e6d47371/"]
   },
   {
     "id": 47,
@@ -373,7 +373,7 @@
     "category": "Право в сфере ЖКХ",
     "country": ["Россия"],
     "answer": "Согласно п. 31 ПП РФ №354, отключение коммунальных услуг возможно только после предупреждения и в судебном порядке при задолженности более 2 месяцев.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_114247/fe4565bc56b765620bfaaf0155a4f389e6d47371/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_114247/fe4565bc56b765620bfaaf0155a4f389e6d47371/"]
   },
   {
     "id": 48,
@@ -381,7 +381,7 @@
     "category": "Право в сфере ЖКХ",
     "country": ["Россия"],
     "answer": "Согласно ст. 169 ЖК РФ, участие в капитальном ремонте оформляется через региональный фонд. Необходимо оплачивать взносы ежемесячно в размере, установленном региональным законодательством.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_51057/cc9137589dd15d74afed9cc942fe2ce69987516b/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_51057/cc9137589dd15d74afed9cc942fe2ce69987516b/"]
   },
   {
     "id": 49,
@@ -389,7 +389,7 @@
     "category": "Право в сфере ЖКХ",
     "country": ["Россия"],
     "answer": "Согласно ст. 1064 ГК РФ, вы имеете право требовать возмещения ущерба от виновника. Необходимо составить акт затопления с участием управляющей компании и оценить ущерб.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_9027/c511835e25e63740cf185038b1ad056526f814e9/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_9027/c511835e25e63740cf185038b1ad056526f814e9/"]
   },
   {
     "id": 50,
@@ -397,6 +397,6 @@
     "category": "Право в сфере ЖКХ",
     "country": ["Россия"],
     "answer": "Согласно ст. 169 ЖК РФ, льготы на оплату капитального ремонта предоставляются пенсионерам старше 70 и 80 лет в размере 50% и 100% соответственно.",
-    "law_links": [https://www.consultant.ru/document/cons_doc_LAW_51057/cc9137589dd15d74afed9cc942fe2ce69987516b/]
+    "law_links": ["https://www.consultant.ru/document/cons_doc_LAW_51057/cc9137589dd15d74afed9cc942fe2ce69987516b/"]
   }
 ]
