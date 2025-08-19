@@ -1,6 +1,8 @@
 import os
 import json
 import asyncio
+import logging
+import requests
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
@@ -14,7 +16,6 @@ from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 import io
-import logging
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
@@ -75,111 +76,82 @@ def calculate_similarity(a, b):
 
 def generate_legal_document(doc_type, context):
     """
-    Заглушка для генерации юридического документа через YaLM API.
-    В реальной реализации здесь будет вызов API.
+    Генерация юридического документа через YaLM API
     """
-    logger.info(f"Генерация документа: {doc_type} с контекстом: {context}")
+    logger.info(f"Генерация документа через YaLM API: {doc_type}")
     
-    # Пример сгенерированного документа для демонстрации
-    templates = {
-        "Претензия на возврат товара": f"""
-ПРЕТЕНЗИЯ
-о возврате денежных средств за некачественный товар
-
-г. Москва
-{context.get('дата', 'Дата')}
-
-В магазин "{context.get('магазин', 'Название магазина')}"
-
-Я, {context.get('ФИО', 'ФИО потребителя')}, проживающий(ая) по адресу: {context.get('адрес', 'Адрес')},
-2 {context.get('дата покупки', 'дата')} приобрел(а) в Вашем магазине товар: "{context.get('наименование товара', 'Наименование товара')}".
-
-В процессе эксплуатации обнаружил(а) следующие недостатки: {context.get('описание проблемы', 'Описание проблемы')}.
-
-На основании ст. 18 Закона РФ "О защите прав потребителей" требую:
-1. Возврата уплаченной за товар денежной суммы в размере {context.get('сумма', 'Сумма')} рублей.
-2. Выплаты неустойки в размере 1% от стоимости товара за каждый день просрочки.
-
-В случае отказа или игнорирования настоящей претензии буду вынужден(а) обратиться в суд 
-с требованием о взыскании денежных средств, неустойки, компенсации морального вреда и штрафа.
-
-Приложение:
-1. Копия чека/товарного чека
-2. Копия гарантийного талона (при наличии)
-
-С уважением,
-{context.get('ФИО', 'ФИО потребителя')}
-{context.get('контактный телефон', 'Контактный телефон')}
-        """,
-        "Исковое заявление об увольнении": f"""
-В {context.get('суд', 'Наименование суда')}
-
-Истец: {context.get('ФИО', 'ФИО истца')}
-Адрес: {context.get('адрес', 'Адрес истца')}
-Телефон: {context.get('телефон', 'Телефон истца')}
-
-Ответчик: {context.get('наименование работодателя', 'Наименование работодателя')}
-Адрес: {context.get('адрес работодателя', 'Адрес работодателя')}
-
-ИСКОВОЕ ЗАЯВЛЕНИЕ
-о восстановлении на работе и взыскании заработной платы
-
-{context.get('дата увольнения', 'Дата')} меня, {context.get('ФИО', 'ФИО истца')}, был уволен(а) {context.get('должность', 'Должность')} {context.get('наименование работодателя', 'Наименование работодателя')} по п. {context.get('основание увольнения', 'Основание')} ст. 81 ТК РФ.
-
-Увольнение произведено незаконно, так как: {context.get('обстоятельства', 'Обстоятельства')}
-
-На основании изложенного, руководствуясь ст. 81 ТК РФ, ст. 392 ТК РФ, ст. 237 ТК РФ,
-прошу суд:
-1. Признать увольнение незаконным и восстановить меня на работе.
-2. Взыскать с ответчика заработную плату за время вынужденного прогула в размере {context.get('сумма', 'Сумма')} рублей.
-3. Взыскать компенсацию морального вреда в размере {context.get('сумма морального вреда', 'Сумма')} рублей.
-
-Приложения:
-1. Копия трудовой книжки
-2. Копия приказа об увольнении
-3. Расчет среднего заработка
-4. Другие доказательства
-
-Дата: {context.get('дата', 'Дата')}
-Подпись: _________________
-        """,
-        "Договор аренды квартиры": f"""
-ДОГОВОР АРЕНДЫ КВАРТИРЫ
-№ {context.get('номер договора', 'Номер')} от {context.get('дата', 'Дата')}
-
-г. {context.get('город', 'Город')}
-
-Арендодатель: {context.get('ФИО арендодателя', 'ФИО арендодателя')}, паспорт: {context.get('паспорт арендодателя', 'Паспортные данные')}, 
-адрес регистрации: {context.get('адрес регистрации арендодателя', 'Адрес регистрации')}
-
-Арендатор: {context.get('ФИО арендатора', 'ФИО арендатора')}, паспорт: {context.get('паспорт арендатора', 'Паспортные данные')}, 
-адрес регистрации: {context.get('адрес регистрации арендатора', 'Адрес регистрации')}
-
-1. Предмет договора
-Арендодатель предоставляет Арендатору во временное пользование квартиру, расположенную по адресу: 
-{context.get('адрес квартиры', 'Адрес квартиры')}
-
-2. Срок аренды
-Настоящий договор заключен на срок {context.get('срок аренды', 'Срок аренды')} с {context.get('дата начала', 'Дата начала')} по {context.get('дата окончания', 'Дата окончания')}.
-
-3. Размер и порядок оплаты
-Размер арендной платы составляет {context.get('размер арендной платы', 'Размер')} рублей в месяц.
-Оплата вносится не позднее {context.get('срок оплаты', 'Срок оплаты')} числа каждого месяца.
-
-4. Права и обязанности сторон
-[Подробные условия договора]
-
-5. Заключительные положения
-[Заключительные положения]
-
-Договор составлен в двух экземплярах, имеющих одинаковую юридическую силу.
-
-Арендодатель: _________________
-Арендатор: _________________
-        """
+    # Получаем данные из окружения
+    api_key = os.getenv("YALM_API_KEY")
+    catalog_id = os.getenv("CATALOG_ID")
+    
+    if not api_key or not catalog_id:
+        logger.error("Отсутствуют необходимые переменные окружения для YaLM API")
+        return "Ошибка: не настроено подключение к YaLM API. Обратитесь к администратору."
+    
+    # Формируем промпт на основе выбранного типа документа
+    if doc_type in DOCUMENT_TEMPLATES:
+        base_prompt = DOCUMENT_TEMPLATES[doc_type]["prompt"]
+        
+        # Создаем детальный промпт с заполненными данными
+        prompt = f"Создай юридически корректный документ: {doc_type}\n\n"
+        prompt += "Используй следующие данные:\n"
+        
+        for field in DOCUMENT_TEMPLATES[doc_type]["required_fields"]:
+            value = context.get(field, "не указано")
+            prompt += f"- {field}: {value}\n"
+            
+        prompt += "\nТребования к документу:\n"
+        prompt += "- Соответствие законодательству РФ\n"
+        prompt += "- Правильная структура и формулировки\n"
+        prompt += "- Все необходимые реквизиты\n"
+        prompt += "- Профессиональный юридический язык\n\n"
+        prompt += "Сгенерируй полный текст документа:"
+    else:
+        prompt = f"Создай юридический документ: {doc_type}. Учти следующие данные: {context}"
+    
+    # Подготовка запроса к YaLM API
+    api_url = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"
+    headers = {
+        "Authorization": f"Api-Key {api_key}",
+        "Content-Type": "application/json"
     }
     
-    return templates.get(doc_type, "Документ не найден")
+    payload = {
+        "modelUri": f"gpt://{catalog_id}/yandexgpt/latest",
+        "completionOptions": {
+            "stream": False,
+            "temperature": 0.3,
+            "maxTokens": "2000"
+        },
+        "messages": [
+            {
+                "role": "system",
+                "text": "Ты - опытный юрист, который помогает создавать юридические документы. "
+                        "Ты должен создавать документы в соответствии с законодательством РФ, "
+                        "используя правильные формулировки и структуру."
+            },
+            {
+                "role": "user",
+                "text": prompt
+            }
+        ]
+    }
+    
+    try:
+        response = requests.post(api_url, json=payload, headers=headers)
+        response.raise_for_status()
+        
+        result = response.json()
+        generated_text = result["result"]["alternatives"][0]["message"]["text"]
+        
+        logger.info(f"Документ успешно сгенерирован через YaLM API")
+        return generated_text
+    
+    except Exception as e:
+        logger.error(f"Ошибка при вызове YaLM API: {str(e)}")
+        return ("Произошла ошибка при генерации документа.\n\n"
+                "Вот пример структуры документа:\n\n" + 
+                DOCUMENT_TEMPLATES.get(doc_type, {"prompt": ""})["prompt"])
 
 def create_pdf(document_text, doc_type):
     """Создает PDF файл из текста документа"""
@@ -331,7 +303,13 @@ async def process_document_type(message: types.Message, state: FSMContext):
         reply_markup=types.ReplyKeyboardRemove()
     )
     
-    await state.set_state(DocumentForm.entering_complaint_info)
+    # Устанавливаем соответствующее состояние в зависимости от типа документа
+    if doc_type == "Претензия на возврат товара":
+        await state.set_state(DocumentForm.entering_complaint_info)
+    elif doc_type == "Исковое заявление об увольнении":
+        await state.set_state(DocumentForm.entering_lawsuit_info)
+    elif doc_type == "Договор аренды квартиры":
+        await state.set_state(DocumentForm.entering_lease_agreement_info)
 
 @dp.message(DocumentForm.entering_complaint_info)
 @dp.message(DocumentForm.entering_lawsuit_info)
@@ -457,7 +435,14 @@ async def restart_document(message: types.Message, state: FSMContext):
         f"Пожалуйста, укажите {required_fields[0]}:",
         reply_markup=types.ReplyKeyboardRemove()
     )
-    await state.set_state(DocumentForm.entering_complaint_info)
+    
+    # Устанавливаем соответствующее состояние в зависимости от типа документа
+    if doc_type == "Претензия на возврат товара":
+        await state.set_state(DocumentForm.entering_complaint_info)
+    elif doc_type == "Исковое заявление об увольнении":
+        await state.set_state(DocumentForm.entering_lawsuit_info)
+    elif doc_type == "Договор аренды квартиры":
+        await state.set_state(DocumentForm.entering_lease_agreement_info)
 
 @dp.message()
 async def handle_question(message: types.Message):
