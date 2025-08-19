@@ -6,8 +6,13 @@ from dotenv import load_dotenv
 import asyncio
 
 # Загружаем базу знаний
-with open("data/qa_base.json", "r", encoding="utf-8") as f:
-    qa_base = json.load(f)
+try:
+    with open("data/qa_base.json", "r", encoding="utf-8") as f:
+        qa_base = json.load(f)
+    print(f"Загружено {len(qa_base)} вопросов в базу знаний")
+except Exception as e:
+    print(f"Ошибка при загрузке базы знаний: {e}")
+    qa_base = []
 
 load_dotenv()
 bot = Bot(token=os.getenv("BOT_TOKEN"))
@@ -50,14 +55,27 @@ async def handle_chat(message: types.Message):
 
 @dp.message()
 async def handle_question(message: types.Message):
-    user_question = message.text.lower()
+    # Предобработка текста
+    user_question = message.text.lower().strip().replace("?", "").replace(".", "").replace("!", "")
     
-    # Ищем совпадение в базе
+    # Поиск по частичному совпадению
     for item in qa_base:
-        if item["question"].lower() in user_question:
+        # Убираем знаки препинания из вопроса из базы
+        base_question = item["question"].lower().replace("?", "").replace(".", "").replace("!", "")
+        
+        # Проверяем, содержится ли текст пользователя в вопросе из базы
+        if user_question in base_question or base_question in user_question:
+            # Формируем ответ
+            response = f"⚖️ {item['answer']}\n\n"
+            
+            # Добавляем ссылки на законы, если они есть
+            if item["law_links"] and len(item["law_links"]) > 0:
+                response += "🔗 Источник: "
+                for i, link in enumerate(item["law_links"], 1):
+                    response += f"\n{i}. {link}"
+            
             await message.answer(
-                f"⚖️ {item['answer']}\n\n"
-                f"🔗 Источник: Статья {item['answer'].split('ст. ')[1].split(' ')[0]} ТК РФ",
+                response,
                 reply_markup=types.ReplyKeyboardRemove()
             )
             return
