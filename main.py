@@ -18,6 +18,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 import io
+from datetime import datetime
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
@@ -254,12 +255,11 @@ def create_pdf(document_text, doc_type):
                 if any(keyword in line.lower() for keyword in ['г.', 'требую', 'прошу', 'адрес', 'ф.и.о', 'паспорт', 'дата']):
                     p_style = ParagraphStyle(
                         name='Header',
-                        fontName=font_name,
+                        fontName='Helvetica-Bold',  # Используем жирный шрифт для заголовков
                         fontSize=12,
                         leading=15,
                         wordWrap='LTR',
-                        alignment=0,
-                        fontName='Helvetica-Bold'
+                        alignment=0
                     )
                 else:
                     p_style = normal_style
@@ -410,7 +410,6 @@ async def process_document_info(message: types.Message, state: FSMContext):
         
         # Добавляем дату, если ее нет
         if "дата" not in required_fields:
-            from datetime import datetime
             user_data["дата"] = datetime.now().strftime("%d.%m.%Y")
         
         # Сохраняем обновленные данные
@@ -599,5 +598,4 @@ async def main():
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
-    from datetime import datetime
     asyncio.run(main())
