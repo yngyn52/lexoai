@@ -13,8 +13,10 @@ from dotenv import load_dotenv
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from reportlab.lib import colors
-from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 import io
 
 # Настройка логирования
@@ -38,25 +40,57 @@ class DocumentForm(StatesGroup):
     entering_lease_agreement_info = State()
     confirming_document = State()
 
-# Шаблоны документов
+# Шаблоны документов с обязательными полями
 DOCUMENT_TEMPLATES = {
     "Претензия на возврат товара": {
         "prompt": "Создай претензию на возврат товара по ст. 18 ЗоЗПП РФ. "
                   "Включи реквизиты: ФИО потребителя, адрес, дата покупки, "
-                  "наименование товара, описание проблемы, требование о возврате средств.",
-        "required_fields": ["ФИО", "адрес", "дата покупки", "наименование товара", "описание проблемы"]
+                  "наименование товара, описание проблемы, стоимость товара, "
+                  "способ оплаты, наименование магазина, адрес магазина.",
+        "required_fields": [
+            "ФИО", 
+            "адрес", 
+            "дата покупки", 
+            "наименование товара", 
+            "описание проблемы",
+            "стоимость товара",
+            "способ оплаты",
+            "наименование магазина",
+            "адрес магазина"
+        ]
     },
     "Исковое заявление об увольнении": {
         "prompt": "Создай исковое заявление об восстановлении на работе по ст. 81 ТК РФ. "
                   "Включи реквизиты: ФИО истца, адрес, наименование ответчика, "
-                  "дата увольнения, обстоятельства, доказательства, требование о восстановлении.",
-        "required_fields": ["ФИО", "адрес", "наименование работодателя", "дата увольнения", "обстоятельства"]
+                  "дата увольнения, обстоятельства, доказательства, требование о восстановлении, "
+                  "размер компенсации, должность, стаж работы.",
+        "required_fields": [
+            "ФИО", 
+            "адрес", 
+            "наименование работодателя", 
+            "дата увольнения", 
+            "обстоятельства",
+            "должность",
+            "стаж работы",
+            "размер компенсации"
+        ]
     },
     "Договор аренды квартиры": {
         "prompt": "Создай договор аренды квартиры по ст. 671 ГК РФ. "
                   "Включи реквизиты: ФИО арендодателя, ФИО арендатора, адрес квартиры, "
-                  "срок аренды, размер арендной платы, порядок оплаты, права и обязанности сторон.",
-        "required_fields": ["ФИО арендодателя", "ФИО арендатора", "адрес квартиры", "срок аренды", "размер арендной платы"]
+                  "срок аренды, размер арендной платы, порядок оплаты, права и обязанности сторон, "
+                  "паспортные данные арендодателя, паспортные данные арендатора, состояние квартиры.",
+        "required_fields": [
+            "ФИО арендодателя", 
+            "ФИО арендатора", 
+            "адрес квартиры", 
+            "срок аренды", 
+            "размер арендной платы",
+            "порядок оплаты",
+            "паспортные данные арендодателя",
+            "паспортные данные арендатора",
+            "состояние квартиры"
+        ]
     }
 }
 
@@ -154,9 +188,20 @@ def generate_legal_document(doc_type, context):
                 DOCUMENT_TEMPLATES.get(doc_type, {"prompt": ""})["prompt"])
 
 def create_pdf(document_text, doc_type):
-    """Создает PDF файл из текста документа"""
+    """Создает PDF файл из текста документа с поддержкой русского языка"""
     try:
         buffer = io.BytesIO()
+        
+        # Добавляем поддержку русского языка
+        try:
+            pdfmetrics.registerFont(TTFont('DejaVu', 'DejaVuSans.ttf'))
+            font_name = 'DejaVu'
+        except:
+            try:
+                pdfmetrics.registerFont(TTFont('Arial', 'arial.ttf'))
+                font_name = 'Arial'
+            except:
+                font_name = 'Helvetica'
         
         # Создаем PDF документ
         doc = SimpleDocTemplate(
@@ -170,13 +215,23 @@ def create_pdf(document_text, doc_type):
         
         # Стили для документа
         styles = getSampleStyleSheet()
+        
+        # Добавляем кастомный стиль для русского языка
+        styles.add(ParagraphStyle(
+            name='Russian',
+            fontName=font_name,
+            fontSize=12,
+            leading=15,
+            wordWrap='LTR',
+            alignment=0  # 0=left, 1=center, 2=right, 3=justify
+        ))
+        
         title_style = styles["Heading1"]
+        title_style.fontName = font_name
         title_style.fontSize = 16
         title_style.alignment = 1  # Центрирование
         
-        normal_style = styles["BodyText"]
-        normal_style.fontSize = 12
-        normal_style.leading = 15
+        normal_style = styles["Russian"]
         
         # Разделяем текст на строки и создаем элементы
         elements = []
@@ -186,14 +241,26 @@ def create_pdf(document_text, doc_type):
         elements.append(title)
         elements.append(Spacer(1, 20))
         
+        # Добавляем дату и место
+        date_str = f"г. Москва, {datetime.now().strftime('%d.%m.%Y')}"
+        elements.append(Paragraph(date_str, normal_style))
+        elements.append(Spacer(1, 10))
+        
         # Добавляем содержимое документа
         lines = document_text.strip().split('\n')
         for line in lines:
             if line.strip():
                 # Если строка содержит двоеточие и выглядит как реквизит, делаем ее жирной
                 if any(keyword in line.lower() for keyword in ['г.', 'требую', 'прошу', 'адрес', 'ф.и.о', 'паспорт', 'дата']):
-                    p_style = styles["Heading3"]
-                    p_style.fontSize = 12
+                    p_style = ParagraphStyle(
+                        name='Header',
+                        fontName=font_name,
+                        fontSize=12,
+                        leading=15,
+                        wordWrap='LTR',
+                        alignment=0,
+                        fontName='Helvetica-Bold'
+                    )
                 else:
                     p_style = normal_style
                 elements.append(Paragraph(line, p_style))
@@ -341,9 +408,10 @@ async def process_document_info(message: types.Message, state: FSMContext):
         for field in required_fields:
             confirmation_text += f"{field}: {user_data.get(field, 'Не указано')}\n"
         
-        # Добавляем дополнительные поля, если они есть
+        # Добавляем дату, если ее нет
         if "дата" not in required_fields:
-            user_data["дата"] = message.date.strftime("%d.%m.%Y")
+            from datetime import datetime
+            user_data["дата"] = datetime.now().strftime("%d.%m.%Y")
         
         # Сохраняем обновленные данные
         await state.update_data(user_data)
@@ -369,6 +437,21 @@ async def confirm_document(message: types.Message, state: FSMContext):
     # Получаем данные
     user_data = await state.get_data()
     doc_type = user_data["document_type"]
+    
+    # Проверка на наличие всех обязательных полей
+    missing_fields = []
+    for field in DOCUMENT_TEMPLATES[doc_type]["required_fields"]:
+        if not user_data.get(field):
+            missing_fields.append(field)
+    
+    if missing_fields:
+        await message.answer(
+            f"Ошибка: не заполнены обязательные поля:\n{', '.join(missing_fields)}\n\n"
+            "Пожалуйста, заполните все обязательные поля для корректного оформления документа.",
+            reply_markup=types.ReplyKeyboardRemove()
+        )
+        await state.set_state(DocumentForm.entering_complaint_info)
+        return
     
     # Генерируем документ
     document_text = generate_legal_document(doc_type, user_data)
@@ -516,4 +599,5 @@ async def main():
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
+    from datetime import datetime
     asyncio.run(main())
